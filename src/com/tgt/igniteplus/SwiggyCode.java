@@ -25,7 +25,7 @@ public class SwiggyCode {
     public static void checkCode(int zipcode) throws InvalideCodeException{
         int flag=0;
         for(int i =0;i< code.size();i++) {
-            if (zipcode != code.get(i))
+            if (zipcode != code.get(i) &&  Integer.toString(zipcode).length()==6)
                 flag=1;
             else
                 throw new InvalideCodeException("Invalid");
@@ -41,10 +41,10 @@ class InvalideCodeException extends Exception {
 }
 /*OUTPUT:
 1.Enter the zipcode
-345
+560024
 Delivery available in your area!
 
 2.Enter the zipcode
-456
+238
 Delivery unavailable
- */
+*/
